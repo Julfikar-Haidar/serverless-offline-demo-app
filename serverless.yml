@@ -1,0 +1,27 @@
+service: aws-node-project
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: us-east-1
+
+plugins:
+  - serverless-offline
+
+functions:
+  simpleLamdas:
+    handler: handler.hello
+    events:
+      - http:
+          path: /hello
+          method: get
+
+  wlcLamdas:
+    handler: handler.wlc
+    events:
+      - http:
+          path: /welcome
+          method: post
