@@ -7,6 +7,7 @@ module.exports.hello = async (event) => {
       {
         message: 'Go Serverless v3.0! Your function executed successfully!',
         input: event,
+        
       },
       null,
       2
@@ -16,12 +17,14 @@ module.exports.hello = async (event) => {
 
 
 module.exports.wlc = async (event) => {
+  let post_data = JSON.parse(event.body)
+
   return {
     statusCode: 200,
     body: JSON.stringify(
       {
-        message: 'Hey guys',
-        input: event,
+        message: 'Hey',
+        input: post_data,
       },
       null,
       2

@@ -25,3 +25,33 @@ functions:
       - http:
           path: /welcome
           method: post
+  list:
+    handler: books/list.handler
+    events:
+      - http:
+          path: /book-list/
+          method: get
+  getBooks:
+    handler: books/get.handler
+    events:
+      - http:
+          path: /book/{id}
+          method: get
+  create:
+    handler: books/create.handler
+    events:
+      - http:
+          path: /books
+          method: post
+  update:
+    handler: books/update.handler
+    events:
+      - http:
+          path: /book/{id}
+          method: put
+  deleteBooks:
+    handler: books/delete.handler
+    events:
+      - http:
+          path: /book
+          method: delete
